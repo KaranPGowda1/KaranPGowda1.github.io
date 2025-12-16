@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Karan Prabhu | Marketing & Business Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Karan Prabhu, a Marketing & Business Analyst specializing in market research, consumer insights, and KPI-driven strategy."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius: 18px;
+      --shadow: 0 18px 35px rgba(15, 23, 42, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.85), transparent);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+    }
+
+    .nav {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: radial-gradient(circle at 20% 0, #38bdf8 0, #0f172a 45%, #020617 100%);
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    main {
+      margin-top: 32px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 880px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 22px 22px 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .card + .card {
+      margin-top: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      font-size: 0.85rem;
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9);
+      color: #0b1220;
+      font-weight: 600;
+      box-shadow: 0 16px 30px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 40px rgba(56, 189, 248, 0.65);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .section-title {
+      font-size: 0.86rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section-heading {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .item {
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.92rem;
+    }
+
+    .item-role {
+      font-weight: 600;
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+
+    ul li + li {
+      margin-top: 4px;
+    }
+
+    .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="avatar">KP</div>
+        <div>
+          <div class="nav-title">Karan Prabhu</div>
+          <div style="font-size:0.8rem; color:#9ca3af;">Marketing &amp; Business Analyst</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page">
+    <main class="layout">
+      <!-- LEFT COLUMN -->
+      <section>
+        <article class="card" id="about">
+          <div class="eyebrow">Profile</div>
+          <h1>KPI-driven Marketing &amp; Business Analyst</h1>
+          <p class="subtitle">
+            I help organizations grow by connecting market research, consumer insight, and data-led strategy
+            to clear business decisions.
+          </p>
+
+          <div class="pill-row">
+            <span class="pill">Market Research &amp; Insights</span>
+            <span class="pill">Consumer Behavior</span>
+            <span class="pill">Strategic Marketing</span>
+            <span class="pill">B2B &amp; B2C</span>
+          </div>
+
+          <div class="cta-row">
+            <!-- Replace # with your actual CV link if hosted -->
+            <a href="#" class="btn btn-primary">Download CV</a>
+            <a href="mailto:karanpgowda11@gmail.com" class="btn btn-ghost">Email Me</a>
+          </div>
+
+          <div style="margin-top:18px; font-size:0.92rem;">
+            <p>
+              I am a results-driven Marketing &amp; Business Analyst with 4+ years of experience supporting
+              client acquisition, revenue optimization, and market expansion through KPI-led analysis and
+              structured marketing research.
+            </p>
+            <br />
+            <p>
+              Backed by an MSc in Marketing (UK) and an engineering foundation, I combine analytical rigor with
+              strategic thinking, using frameworks like SWOT, STP and PESTLE to translate data into practical
+              decisions for leadership and commercial teams.
+            </p>
+          </div>
+        </article>
+
+        <article class="card" id="experience">
+          <div class="card-header">
+            <div>
+              <div class="section-title">Experience</div>
+              <h2 class="section-heading">Professional Journey</h2>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="item">
+              <div class="item-header">
+                <div>
+                  <div class="item-role">Marketing Research Analyst</div>
+                  <div class="item-meta">Lotus Illume Inc. • Bengaluru • Oct 2023 – Present</div>
+                </div>
+              </div>
+              <ul>
+                <li>Built and tracked KPI dashboards for acquisition, retention, revenue and segment performance.</li>
+                <li>Applied SWOT analysis to evaluate positioning, identify gaps and surface growth opportunities.</li>
+                <li>Conducted market share, pricing and demand analysis to support expansion into new segments.</li>
+                <li>Designed and executed consumer surveys and focus groups, turning insights into clear actions.</li>
+                <li>Prioritized target customer segments to sharpen sales focus and improve conversion.</li>
+                <li>Supported business development with data-backed proposals and market insights.</li>
+                <li>Represented the company at trade shows and industry events, strengthening B2B relationships.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="projects">
+          <div class="card-header">
+            <div>
+              <div class="section-title">Projects &amp; Case Studies</div>
+              <h2 class="section-heading">Selected Work</h2>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="item">
+              <div class="item-header">
+                <div>
+                  <div class="item-role">Marketing Research – Plantasia Tropical Zoo</div>
+                  <div class="item-meta">Academic Project • United Kingdom</div>
+                </div>
+              </div>
+              <ul>
+                <li>Analyzed visitor behavior, pricing perception and competitive positioning through primary &amp; secondary research.</li>
+                <li>Designed surveys and synthesized qualitative and quantitative data into strategic insights.</li>
+                <li>Recommended actions to improve customer acquisition, retention and international outreach.</li>
+              </ul>
+              <div class="tag-grid">
+                <span class="tag">Consumer Insights</span>
+                <span class="tag">Survey Design</span>
+                <span class="tag">Competitive Analysis</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <div>
+                  <div class="item-role">Button-Operated Electromagnetic Gear Shifting System</div>
+                  <div class="item-meta">Engineering Project • Accessibility-focused</div>
+                </div>
+              </div>
+              <ul>
+                <li>Designed a solenoid-based automatic gear-shifting mechanism for users with lower-limb disabilities.</li>
+                <li>Integrated mechanical design and user-centric problem solving to improve accessibility.</li>
+              </ul>
+              <div class="tag-grid">
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Engineering Design</span>
+                <span class="tag">User-Centric Thinking</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside>
+        <article class="card" id="skills">
+          <div class="section-title">Skills</div>
+          <h2 class="section-heading">Core Capabilities</h2>
+
+          <div class="stack">
+            <div class="item">
+              <div class="item-role">Marketing Research &amp; Insights</div>
+              <ul>
+                <li>Market research (primary &amp; secondary)</li>
+                <li>Consumer behavior &amp; visitor analysis</li>
+                <li>Survey design &amp; focus groups</li>
+                <li>Market trend &amp; demand forecasting</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-role">Business &amp; Strategy</div>
+              <ul>
+                <li>SWOT, STP &amp; PESTLE analysis</li>
+                <li>Go-to-market &amp; growth strategy</li>
+                <li>Market share &amp; pricing analysis</li>
+                <li>CRM &amp; customer segmentation</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-role">Analytics &amp; Tools</div>
+              <ul>
+                <li>Data analysis &amp; interpretation (SPSS)</li>
+                <li>KPI dashboarding &amp; performance tracking</li>
+                <li>Quantitative &amp; qualitative analysis</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-role">Professional Strengths</div>
+              <ul>
+                <li>Stakeholder communication &amp; negotiation</li>
+                <li>Client-facing presentations &amp; events</li>
+                <li>Highly organized and detail-oriented</li>
+                <li>Experience across education, apparel &amp; automotive-related ventures</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">Education</div>
+          <div class="stack">
+            <div class="item">
+              <div class="item-role">MSc – Marketing</div>
+              <div class="item-meta">Cardiff University • Jan 2022 – Jan 2023</div>
+              <ul>
+                <li>Specialization in Marketing Research, Consumer Behavior &amp; Strategic Marketing.</li>
+                <li>Hands-on experience with quantitative &amp; qualitative research methodologies.</li>
+              </ul>
+            </div>
+            <div class="item">
+              <div class="item-role">BE – Mechanical Engineering</div>
+              <div class="item-meta">Bangalore Institute of Technology • Jan 2017 – Jan 2021</div>
+              <ul>
+                <li>Built strong analytical and problem-solving foundations.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="contact">
+          <div class="section-title">Contact</div>
+          <h2 class="section-heading">Let’s Connect</h2>
+          <p class="muted">
+            Open to opportunities in marketing analytics, business analysis, and research-focused roles.
+          </p>
+          <div class="stack" style="margin-top:10px;">
+            <div class="item">
+              <ul>
+                <li><strong>Location:</strong> Bengaluru, Karnataka</li>
+                <li><strong>Email:</strong> <a href="mailto:karanpgowda11@gmail.com">karanpgowda11@gmail.com</a></li>
+                <!-- Add your LinkedIn URL here -->
+                <!-- <li><strong>LinkedIn:</strong> <a href="YOUR_LINKEDIN_URL">View profile</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Karan Prabhu. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
